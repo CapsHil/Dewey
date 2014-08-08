@@ -16,14 +16,15 @@ class Personnage
 {
     public :
     
-    void defCaracteristique(std::string nom, int créa, int market, int com, int scient, int cout);
+    Personnage(std::string nom, int créa, int market, int com, int scient, int cost);
     void defDescription(std::string description);
     void defMotivation(int motiv);
-    void defAffinité(std::vector<Personnage> affinite, std::vector<Personnage> antipathie);
+    void defAffinite(std::vector<Personnage> affinite, std::vector<Personnage> antipathie);
+    void afficherInfo(Personnage perso);
     
     private :
     
-    int m_création, m_marketing, m_communication, m_scientifique, m_cout, m_motivation;
+    int m_creation, m_marketing, m_communication, m_scientifique, m_cout, m_motivation;
     std::vector<Personnage> m_affinite, m_antipathie;
     std::string m_nom, m_description;
 };
