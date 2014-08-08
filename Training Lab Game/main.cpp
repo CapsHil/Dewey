@@ -7,12 +7,20 @@
 //
 
 #include <iostream>
+#include <string>
+#include <vector>
+#include "Personnage.h"
+
+using namespace std;
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    vector<Personnage> affinite, antipathie;
+    
+    Personnage steve_jobs;
+    steve_jobs.defCaracteristique("Steve Jobs", 1, 3, 0, 2, 100);
+    steve_jobs.defAffinité(affinite, antipathie);
+    
     return 0;
 }
 
