@@ -14,6 +14,15 @@
 
 class Tour : public Partie{
     
+    public :
+    
+    void jouerPhase1();
+    void jouerPhase2();
+    void jouerPhase3();
+    
+    private :
+    
+    
 };
 
 #endif /* defined(__Training_Lab_Game__Tour__) */

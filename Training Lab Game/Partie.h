@@ -14,13 +14,13 @@
 
 class Partie{
     
-    private :
+    public :
     
     void jouerTour();
     
-    public :
+    private :
     
-    std::vector<int> objectif;
+    std::vector<int> m_objectif;
     
 };
 

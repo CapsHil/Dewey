@@ -13,6 +13,9 @@
 		8F87FB651998BFB900A227B2 /* Scoring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB631998BFB900A227B2 /* Scoring.cpp */; };
 		8F87FB681998C2C700A227B2 /* Partie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB661998C2C700A227B2 /* Partie.cpp */; };
 		8F87FB6B1998C51D00A227B2 /* Tour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB691998C51D00A227B2 /* Tour.cpp */; };
+		8F87FB6E1998CC3900A227B2 /* PhaseUn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB6C1998CC3900A227B2 /* PhaseUn.cpp */; };
+		8F87FB711998E04400A227B2 /* Gantt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB6F1998E04400A227B2 /* Gantt.cpp */; };
+		8F87FB741998E33F00A227B2 /* TRL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB721998E33F00A227B2 /* TRL.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,12 @@
 		8F87FB671998C2C700A227B2 /* Partie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partie.h; sourceTree = "<group>"; };
 		8F87FB691998C51D00A227B2 /* Tour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tour.cpp; sourceTree = "<group>"; };
 		8F87FB6A1998C51D00A227B2 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		8F87FB6C1998CC3900A227B2 /* PhaseUn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseUn.cpp; sourceTree = "<group>"; };
+		8F87FB6D1998CC3900A227B2 /* PhaseUn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseUn.h; sourceTree = "<group>"; };
+		8F87FB6F1998E04400A227B2 /* Gantt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gantt.cpp; sourceTree = "<group>"; };
+		8F87FB701998E04400A227B2 /* Gantt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gantt.h; sourceTree = "<group>"; };
+		8F87FB721998E33F00A227B2 /* TRL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TRL.cpp; sourceTree = "<group>"; };
+		8F87FB731998E33F00A227B2 /* TRL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRL.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,12 @@
 				8F87FB671998C2C700A227B2 /* Partie.h */,
 				8F87FB691998C51D00A227B2 /* Tour.cpp */,
 				8F87FB6A1998C51D00A227B2 /* Tour.h */,
+				8F87FB6C1998CC3900A227B2 /* PhaseUn.cpp */,
+				8F87FB6D1998CC3900A227B2 /* PhaseUn.h */,
+				8F87FB6F1998E04400A227B2 /* Gantt.cpp */,
+				8F87FB701998E04400A227B2 /* Gantt.h */,
+				8F87FB721998E33F00A227B2 /* TRL.cpp */,
+				8F87FB731998E33F00A227B2 /* TRL.h */,
 			);
 			path = "Training Lab Game";
 			sourceTree = "<group>";
@@ -139,7 +154,10 @@
 			files = (
 				8F87FB681998C2C700A227B2 /* Partie.cpp in Sources */,
 				8F080E961994EA24008B256B /* main.cpp in Sources */,
+				8F87FB741998E33F00A227B2 /* TRL.cpp in Sources */,
+				8F87FB6E1998CC3900A227B2 /* PhaseUn.cpp in Sources */,
 				8F87FB651998BFB900A227B2 /* Scoring.cpp in Sources */,
+				8F87FB711998E04400A227B2 /* Gantt.cpp in Sources */,
 				8F080EA11994FA4D008B256B /* Employe.cpp in Sources */,
 				8F87FB6B1998C51D00A227B2 /* Tour.cpp in Sources */,
 			);
