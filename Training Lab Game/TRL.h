@@ -10,6 +10,7 @@
 #define __Training_Lab_Game__TRL__
 
 #include <iostream>
+#include "Partie.h"
 #include "Employe.h"
 #include <vector>
 
@@ -17,15 +18,15 @@ class TRL{
     
     public :
     
-    TRL(std::string description);
-    void setEmploye(Employe::Employe employe);
-    void getMotivPerso(Employe::Employe employe);
+    TRL(std::string description, int creation, int marketing, int communication, int scientifique);
+    void addEmploye(Employe::Employe employe);
+    int getMotivPerso(Employe::Employe employe);
     
     private :
     
-    std::vector<Employe::Employe> equipe;
-    std::string description;
-    int m_creation, m_marketing, m_communication, m_scientifique;
+    std::vector<Employe::Employe> m_equipe;
+    std::string m_description;
+    int m_creation, m_marketing, m_communication, m_scientifique, m_debut, m_duree;
 };
 
 #endif /* defined(__Training_Lab_Game__TRL__) */

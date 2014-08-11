@@ -17,8 +17,15 @@ class Employe
     public :
     
     Employe(std::string nom, int créa, int market, int com, int scient, int cost, int mbti, std::string description);
+    ~Employe();
     void changeMotivation(int motiv);
     void afficherInfo() const;
+    int getMBTI() const;
+    std::string getNom();
+    void addCrea(int i);
+    void addMarket(int i);
+    void addCom(int i);
+    void addScient(int i);
     
     private :
     

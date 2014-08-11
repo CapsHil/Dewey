@@ -18,7 +18,7 @@ class Gantt : public PhaseUn{
     public :
     
     int getMotivGenerale() const;
-    int formation(Employe::Employe employe, int type);
+    void formation(Employe::Employe employe, int type);
     int setTRL();
     
     private :
