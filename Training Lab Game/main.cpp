@@ -9,37 +9,47 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Personnage.h"
 #include <fstream>
+#include "Employe.h"
 
 using namespace std;
 
-int main(int argc, const char * argv[])
-{
-    ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/perso.txt", ios::in);  // on ouvre en lecture
+
+void initialisation(){
     
-    if(file)  // si l'ouverture a fonctionné
+    ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/perso.txt", ios::in);
+    
+    if(file)
     {
         char hashtag;
-        string prenom, nom, test, name;
-        int crea, market, com, scient, cost;
+        string prenom, nom, test, name, oldName, description;
+        int crea, market, com, scient, cost, mbti;
         while(getline(file, test)){
-            file >> hashtag; file >> prenom; file >> nom; file >> crea; file >> market; file >> com; file >> scient; file >> cost;
+            file >> hashtag; file >> prenom; file >> nom; file >> crea; file >> market; file >> com; file >> scient; file >> cost; file >> mbti;
+            getline(file, description);
+            getline(file, description);
             if (hashtag != '#')
             {
                 cerr << "Fichier mal remplie ou endommagé" << endl;
                 break;
             }
             name = prenom + " " + nom;
-            Personnage perso(name, crea, market, com, scient, cost);
-            perso.afficherInfo(perso);
+            if(oldName == name)
+                break;
+            oldName = name;
+            Employe nom(name, crea, market, com, scient, cost, mbti, description);
+            nom.afficherInfo();
         }
         
         file.close();
     }
     else
         cerr << "Impossible d'ouvrir le fichier !" << endl;
-    
+}
+
+int main() //int argc, const char * argv[]
+{
+    initialisation();
     return 0;
 }
 

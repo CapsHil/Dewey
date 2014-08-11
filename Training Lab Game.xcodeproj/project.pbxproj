@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8F080E961994EA24008B256B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F080E951994EA24008B256B /* main.cpp */; };
 		8F080E981994EA24008B256B /* Training_Lab_Game.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8F080E971994EA24008B256B /* Training_Lab_Game.1 */; };
+		8F080EA11994FA4D008B256B /* Employe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F080E9F1994FA4D008B256B /* Employe.cpp */; };
+		8F87FB651998BFB900A227B2 /* Scoring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB631998BFB900A227B2 /* Scoring.cpp */; };
+		8F87FB681998C2C700A227B2 /* Partie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB661998C2C700A227B2 /* Partie.cpp */; };
+		8F87FB6B1998C51D00A227B2 /* Tour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F87FB691998C51D00A227B2 /* Tour.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +32,14 @@
 		8F080E921994EA24008B256B /* Training Lab Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Training Lab Game"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F080E951994EA24008B256B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8F080E971994EA24008B256B /* Training_Lab_Game.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Training_Lab_Game.1; sourceTree = "<group>"; };
+		8F080E9F1994FA4D008B256B /* Employe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Employe.cpp; sourceTree = "<group>"; };
+		8F080EA01994FA4D008B256B /* Employe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employe.h; sourceTree = "<group>"; };
+		8F87FB631998BFB900A227B2 /* Scoring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scoring.cpp; sourceTree = "<group>"; };
+		8F87FB641998BFB900A227B2 /* Scoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoring.h; sourceTree = "<group>"; };
+		8F87FB661998C2C700A227B2 /* Partie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Partie.cpp; sourceTree = "<group>"; };
+		8F87FB671998C2C700A227B2 /* Partie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partie.h; sourceTree = "<group>"; };
+		8F87FB691998C51D00A227B2 /* Tour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tour.cpp; sourceTree = "<group>"; };
+		8F87FB6A1998C51D00A227B2 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +72,16 @@
 		8F080E941994EA24008B256B /* Training Lab Game */ = {
 			isa = PBXGroup;
 			children = (
-				8F080E951994EA24008B256B /* main.cpp */,
 				8F080E971994EA24008B256B /* Training_Lab_Game.1 */,
+				8F080E951994EA24008B256B /* main.cpp */,
+				8F080E9F1994FA4D008B256B /* Employe.cpp */,
+				8F080EA01994FA4D008B256B /* Employe.h */,
+				8F87FB631998BFB900A227B2 /* Scoring.cpp */,
+				8F87FB641998BFB900A227B2 /* Scoring.h */,
+				8F87FB661998C2C700A227B2 /* Partie.cpp */,
+				8F87FB671998C2C700A227B2 /* Partie.h */,
+				8F87FB691998C51D00A227B2 /* Tour.cpp */,
+				8F87FB6A1998C51D00A227B2 /* Tour.h */,
 			);
 			path = "Training Lab Game";
 			sourceTree = "<group>";
@@ -117,7 +137,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F87FB681998C2C700A227B2 /* Partie.cpp in Sources */,
 				8F080E961994EA24008B256B /* main.cpp in Sources */,
+				8F87FB651998BFB900A227B2 /* Scoring.cpp in Sources */,
+				8F080EA11994FA4D008B256B /* Employe.cpp in Sources */,
+				8F87FB6B1998C51D00A227B2 /* Tour.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +251,7 @@
 				8F080E9D1994EA24008B256B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

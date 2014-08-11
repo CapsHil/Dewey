@@ -1,0 +1,16 @@
+#
+# Einstein 		De-Vinci	Zuckerberg
+# Steve 		Jobs 		2 		0 		5 		7 		200
+# Martin 		Luther-King	0		0		3		2		0
+# Rosa			Parks		0		0		0		4		300
+# Marilyn		Monroe		6		0		0		0		500
+# Mark			Zuckerberg	0		3		4		0		450
+# Walt			Disney		6		2		3		0		0
+# Katy			Perry		3		0		2		0		400
+# JK			Rowling		2		2		0		3		550
+# Winston		Churchill	0		0		0		6		550
+# Leonard		De-Vinci	6 		0		0		8		600
+# Victoria		Beckham		0		7		0		0		700
+# Margaret		Thatcher	3		0		2		5		450
+# Elisabeth		II		0		0		6		0		600
+# Simone		De-Beauvoir	0		0		0		5		0
