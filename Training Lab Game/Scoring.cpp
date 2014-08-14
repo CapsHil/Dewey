@@ -10,6 +10,17 @@
 
 using namespace std;
 
+void Scoring::setBudget(int budget){
+    
+    m_budget = budget;
+}
+
+void Scoring::addToBudget(int add){
+    
+    m_budget = m_budget + add;
+}
+
+
 vector<int> Scoring::getScore() const{
     
     vector<int> score(5);

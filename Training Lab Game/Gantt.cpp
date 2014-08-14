@@ -10,7 +10,7 @@
 
 void Gantt::formation(Employe::Employe employe, int type){
     
-    PhaseUn::setBudget(-1000);
+    Scoring::addToBudget(-1000);
     if(type == 1)
         employe.addCrea(1);
     else if(type == 2)

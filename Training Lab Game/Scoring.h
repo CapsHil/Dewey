@@ -18,6 +18,8 @@ class Scoring : public Partie{
     
     std::vector<int> getScore() const; // Retourne un <vector> contenant : avancement, budget, interet des clients, motiv, et meilleure offre des clients.
     void setScore(std::vector<int> newScore);
+    void setBudget(int budget);
+    void addToBudget(int budget);
     
     private :
     

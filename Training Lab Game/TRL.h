@@ -19,7 +19,8 @@ class TRL{
     public :
     
     TRL(std::string description, int creation, int marketing, int communication, int scientifique);
-    void addEmploye(Employe::Employe employe);
+    void afficherTRL();
+    void addEmploye();
     int getMotivPerso(Employe::Employe employe);
     
     private :

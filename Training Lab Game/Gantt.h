@@ -11,9 +11,11 @@
 
 #include <iostream>
 #include "PhaseUn.h"
+#include "TRL.h"
 #include "Employe.h"
+#include "Scoring.h"
 
-class Gantt : public PhaseUn{
+class Gantt : public Scoring{
     
     public :
     
