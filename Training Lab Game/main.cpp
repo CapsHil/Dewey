@@ -61,12 +61,9 @@ int main() //int argc, const char * argv[]
 {
     char former('n'), add('n');
     vector<Employe> employe;
-    vector<int> scoring(5);
+    vector<double> scoring(5);
     int choix, comp;
-    Scoring score;
-    score.setBudget(10000);
-    Gantt gantt;
-    vector<int> occupe;
+    Scoring score(10000);
     employe = initEmploye();
     cout << "Voici la liste des employés :" << endl << endl;
     for(int i=0; i<employe.size(); i++){
@@ -100,32 +97,43 @@ int main() //int argc, const char * argv[]
         cout << endl;
     }
     
-    scoring = score.getScore();
-    for(int j=0; j<5; j++){
-        cout << scoring[j] << endl;
-    }
-    
+    double motivTache1(0), motivTache2(0), motivG(0);
     cout << "Quels employés souhaitez vous ajouter pour la tâche 1 ?" << endl;
     do{
         cin >> choix;
-        if(employe[choix-1].getOccupe() == 0)
+        if(employe[choix-1].getOccupe() == 0){
             Tache1.addEmploye(employe[choix-1]);
+            employe[choix-1].setOccupe();
+            score.addToBudget(-(employe[choix-1].getCout()));
+        }
         else
             cout << "Cet employé est déjà occupé..." << endl;
         cout << "Ajouter un nouvel employé ? (y/n)" << endl;
         cin >> add;
     }while(add == 'y');
+    motivTache1 = Tache1.getMotivGeneral();
     
     cout << "Quels employés souhaitez vous ajouter pour la tâche 2 ?" << endl;
     do{
         cin >> choix;
-        if(employe[choix-1].getOccupe() == 0)
+        if(employe[choix-1].getOccupe() == 0){
             Tache2.addEmploye(employe[choix-1]);
+            employe[choix-1].setOccupe();
+            score.addToBudget(-(employe[choix-1].getCout()));
+        }
         else
             cout << "Cet employé est déjà occupé..." << endl;
         cout << "Ajouter un nouvel employé ? (y/n)" << endl;
         cin >> add;
     }while(add == 'y');
+    motivTache2 = Tache2.getMotivGeneral();
+    motivG = (motivTache1 + motivTache2) / 2;
+    score.setMotiv(motivG);
+    
+    scoring = score.getScore();
+    for(int j=0; j<5; j++){
+        cout << scoring[j] << endl;
+    }
     
     return 0;
 }

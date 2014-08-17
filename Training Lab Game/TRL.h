@@ -21,7 +21,8 @@ class TRL{
     TRL(std::string description, int creation, int marketing, int communication, int scientifique);
     void afficherTRL();
     void addEmploye(Employe employe);
-    int getMotivPerso(Employe::Employe employe);
+    double getMotivPerso(Employe::Employe employe);
+    double getMotivGeneral();
     
     private :
     

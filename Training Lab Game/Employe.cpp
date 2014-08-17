@@ -25,6 +25,10 @@ bool Employe::getOccupe(){
     return m_occupe;
 }
 
+int Employe::getCout() const{
+    return m_cout;
+}
+
 void Employe::changeMotivation(int motiv){
     m_motivation = motiv;
 }

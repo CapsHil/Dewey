@@ -13,8 +13,7 @@
 #include <vector>
 #include "Scoring.h"
 
-class Employe : public Scoring
-{
+class Employe{
     public :
     
     Employe(std::string nom, int créa, int market, int com, int scient, int cost, int mbti, std::string description);
@@ -22,6 +21,7 @@ class Employe : public Scoring
     void afficherInfo() const;
     void formation(int choix);
     int getMBTI() const;
+    int getCout() const;
     std::string getNom();
     void addCrea(int i);
     void addMarket(int i);

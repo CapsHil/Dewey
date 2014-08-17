@@ -10,20 +10,23 @@
 
 using namespace std;
 
-void Scoring::setBudget(int budget){
-    
+Scoring::Scoring(double budget) : m_budget(budget){}
+
+void Scoring::setBudget(double budget){
     m_budget = budget;
 }
 
-void Scoring::addToBudget(int add){
-    
+void Scoring::addToBudget(double add){
     m_budget = m_budget + add;
 }
 
+void Scoring::setMotiv(double motiv){
+    m_motiv = motiv;
+}
 
-vector<int> Scoring::getScore() const{
+vector<double> Scoring::getScore() const{
     
-    vector<int> score(5);
+    vector<double> score(5);
     score[0] = m_avancement;
     score[1] = m_budget;
     score[2] = m_interetClient;
@@ -31,18 +34,6 @@ vector<int> Scoring::getScore() const{
     score[4] = m_offreClient;
     
     return score;
-}
-
-void Scoring::setScore(std::vector<int> newScore){
-    
-    vector<int> oldScore(0);
-    oldScore = getScore();
-    m_avancement = oldScore[0] + newScore[0];
-    m_budget = oldScore[1] + newScore[1];
-    m_interetClient = oldScore[2] + newScore[2];
-    m_motiv = oldScore[3] + newScore[3];
-    m_offreClient = oldScore[4] + newScore[4];
-    
 }
 
 

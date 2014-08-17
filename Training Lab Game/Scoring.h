@@ -14,16 +14,20 @@
 #include "Partie.h"
 
 class Scoring : public Partie{
+    
     public :
     
-    std::vector<int> getScore() const; // Retourne un <vector> contenant : avancement, budget, interet des clients, motiv, et meilleure offre des clients.
+    Scoring(double budget);
+    
+    std::vector<double> getScore() const; // Retourne un <vector> contenant : avancement, budget, interet des clients, motiv, et meilleure offre des clients.
     void setScore(std::vector<int> newScore);
-    void setBudget(int budget);
-    void addToBudget(int budget);
+    void setBudget(double budget);
+    void setMotiv(double motiv);
+    void addToBudget(double budget);
     
     private :
     
-    int m_budget, m_avancement, m_motiv, m_interetClient, m_offreClient;
+    double m_budget, m_avancement, m_motiv, m_interetClient, m_offreClient;
     
 };
 

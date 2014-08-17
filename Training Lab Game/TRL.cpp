@@ -25,7 +25,7 @@ void TRL::addEmploye(Employe employe){
     m_equipe.push_back(employe);
 }
 
-int TRL::getMotivPerso(Employe::Employe employe){
+double TRL::getMotivPerso(Employe::Employe employe){
     
     int mbti_profil[16][16];
     
@@ -163,12 +163,21 @@ int TRL::getMotivPerso(Employe::Employe employe){
         x++;
     }
 
-    int motiv(0);
+    double motiv(0);
     int MBTI(employe.getMBTI());
     for(int x=0; x<m_equipe.size(); x++){
         motiv =  motiv + mbti_profil[m_equipe[x].getMBTI()][MBTI];
     }
     motiv = motiv / m_equipe.size();
     
+    return motiv;
+}
+
+double TRL::getMotivGeneral(){
+    
+    double motiv(0);
+    for(int i=0; i<m_equipe.size(); i++)
+        motiv = motiv + getMotivPerso(m_equipe[i]);
+    motiv = motiv / m_equipe.size();    
     return motiv;
 }
