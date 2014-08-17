@@ -11,8 +11,9 @@
 
 #include <string>
 #include <vector>
+#include "Scoring.h"
 
-class Employe
+class Employe : public Scoring
 {
     public :
     
@@ -26,10 +27,13 @@ class Employe
     void addMarket(int i);
     void addCom(int i);
     void addScient(int i);
+    void setOccupe();
+    bool getOccupe();
     
     private :
     
     int m_creation, m_marketing, m_communication, m_scientifique, m_cout, m_motivation, m_mbti;
+    bool m_occupe;
     std::string m_nom, m_description;
 };
 

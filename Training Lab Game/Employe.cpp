@@ -14,7 +14,15 @@
 
 using namespace std;
 
-Employe::Employe(string nom, int créa, int market, int com, int scient, int cost, int mbti, string description) : m_nom(nom), m_creation(créa), m_marketing(market), m_communication(com), m_scientifique(scient), m_cout(cost), m_mbti(mbti), m_description(description), m_motivation(0){
+Employe::Employe(string nom, int créa, int market, int com, int scient, int cost, int mbti, string description) : m_nom(nom), m_creation(créa), m_marketing(market), m_communication(com), m_scientifique(scient), m_cout(cost), m_mbti(mbti), m_description(description), m_motivation(0), m_occupe(0){
+}
+
+void Employe::setOccupe(){
+    m_occupe = 1;
+}
+
+bool Employe::getOccupe(){
+    return m_occupe;
 }
 
 void Employe::changeMotivation(int motiv){
@@ -27,50 +35,15 @@ void Employe::afficherInfo() const{
 
 void Employe::formation(int type){
     
-    int choix; char again('y'), i(1);
-    while(again == 'y'){
-        
-        ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/employeForme.txt", ios::in);
-        ofstream flux("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/employeForme.txt", ios::out);
-        if(file)
-        {
-            char hashtag;
-            string prenom, nom, test, name, oldName, description;
-            int crea, market, com, scient, cost, mbti;
-            while(getline(file, test)){
-                
-                file >> hashtag; file >> prenom; file >> nom;
-                               
-                file >> crea;
-                file >> market;
-                file >> com;
-                file >> scient;
-                file >> cost;
-                file >> mbti;
-                getline(file, description);
-                getline(file, description);
-                if (hashtag != '#')
-                {
-                    cerr << "Fichier mal remplie ou endommagé" << endl;
-                    break;
-                }
-                name = prenom + " " + nom;
-                if(i == choix){
-                    Employe nom(name, crea, market, com, scient, cost, mbti, description);
-                }
-                if(oldName == name)
-                    break;
-                oldName = name;
-                i++;
-            }
-            file.close();
-        }
-        else
-            cerr << "Impossible d'ouvrir le fichier !" << endl;
-        
-        cout << "Ajouter encore un employe ? (y/n)" << endl;
-        cin >> again;
-    }
+    if(type == 1)
+        addCrea(1);
+    else if(type == 2)
+        addMarket(1);
+    else if(type == 3)
+        addCom(1);
+    else if(type == 4)
+        addScient(1);
+    
 }
 
 

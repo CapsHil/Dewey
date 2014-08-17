@@ -17,35 +17,9 @@
 
 using namespace std;
 
-void creationFichier(){
+vector<Employe> initEmploye(){
     
-    ifstream fichier("employe.txt");
-    ofstream flux("employeForme.txt");
-    
-    if(fichier){
-        string ligne;
-        
-        while(getline(fichier, ligne)){
-            if(flux)
-                flux << ligne << endl;
-            else
-                cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
-        }
-    }
-    else
-        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
-}
-
-
-double motivGenerale(){
-    
-    
-    return 0;
-}
-
-void afficherEmploye(){
-    
-    int i(1);
+    vector<Employe> employe;
     
     ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/employe.txt", ios::in);
     
@@ -67,50 +41,132 @@ void afficherEmploye(){
             if(oldName == name)
                 break;
             oldName = name;
-            Employe nom(name, crea, market, com, scient, cost, mbti, description);
-            cout << i << " - "; i++;
-            nom.afficherInfo();
-            cout << endl;
+            Employe francis(name, crea, market, com, scient, cost, mbti, description);
+            employe.push_back(francis);
         }
-        
         file.close();
     }
     else
         cerr << "Impossible d'ouvrir le fichier !" << endl;
+    return employe;
+}
+
+double motivGenerale(){
+    
+    
+    return 0;
 }
 
 int main() //int argc, const char * argv[]
 {
-    char former('n');
-    int employe;
-    Scoring Score;
-    Gantt Gantt;
+    char former('n'), add('n');
+    vector<Employe> employe;
+    vector<int> scoring(5);
+    int choix, comp;
+    Scoring score;
+    score.setBudget(10000);
+    Gantt gantt;
     vector<int> occupe;
-    creationFichier();
+    employe = initEmploye();
     cout << "Voici la liste des employés :" << endl << endl;
-    afficherEmploye();
+    for(int i=0; i<employe.size(); i++){
+        cout << i+1 << " - ";
+        employe[i].afficherInfo();
+        cout << endl;
+    }
     TRL Tache1("Nettoyer la cage de Francis et Dewey", 0, 0, 0, 10);
     TRL Tache2("Sortir Francis et Dewey", 10, 0, 10, 0);
-    cout << "Voici la liste des TRL :" << endl << endl;
+    cout << endl << "Voici la liste des TRL :" << endl << endl;
     Tache1.afficherTRL();
     cout << endl;
     Tache2.afficherTRL();
     
+    cout << endl << "Souhaitez vous former un employés (1000€) ? (y/n)" << endl;
+    cin >> former;
     do{
-        cout << endl << "Souhaitez vous former un employés (1000€) ? (y/n)" << endl;
+    if(former == 'y'){
+        cout << "Quel employé voulez-vous former ? : "; cin >> choix;
+        cout << "Pour quel competence ? (1-Créa ; 2-Market ; 3-Comm ; 4-Scient) : "; cin >> comp;
+        employe[choix-1].formation(comp);
+        score.addToBudget(-1000);
+        cout << "Former un autre employé ? (y/n)" << endl;
         cin >> former;
-        if(former == 'y'){
-            cout << "Quel employé voulez-vous former ? ";
-            cin >> employe;
-        }
-            
+    }
     }while(former == 'y');
     
-    Tache1.addEmploye();
-    Tache2.addEmploye();
+    for(int i=0; i<employe.size(); i++){
+        cout << i+1 << " - ";
+        employe[i].afficherInfo();
+        cout << endl;
+    }
+    
+    scoring = score.getScore();
+    for(int j=0; j<5; j++){
+        cout << scoring[j] << endl;
+    }
+    
+    cout << "Quels employés souhaitez vous ajouter pour la tâche 1 ?" << endl;
+    do{
+        cin >> choix;
+        if(employe[choix-1].getOccupe() == 0)
+            Tache1.addEmploye(employe[choix-1]);
+        else
+            cout << "Cet employé est déjà occupé..." << endl;
+        cout << "Ajouter un nouvel employé ? (y/n)" << endl;
+        cin >> add;
+    }while(add == 'y');
+    
+    cout << "Quels employés souhaitez vous ajouter pour la tâche 2 ?" << endl;
+    do{
+        cin >> choix;
+        if(employe[choix-1].getOccupe() == 0)
+            Tache2.addEmploye(employe[choix-1]);
+        else
+            cout << "Cet employé est déjà occupé..." << endl;
+        cout << "Ajouter un nouvel employé ? (y/n)" << endl;
+        cin >> add;
+    }while(add == 'y');
     
     return 0;
 }
 
 
 
+
+
+
+/*void afficherEmploye(){
+ 
+ int i(1);
+ 
+ ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/employe.txt", ios::in);
+ 
+ if(file)
+ {
+ char hashtag;
+ string prenom, nom, test, name, oldName, description;
+ int crea, market, com, scient, cost, mbti;
+ while(getline(file, test)){
+ file >> hashtag; file >> prenom; file >> nom; file >> crea; file >> market; file >> com; file >> scient; file >> cost; file >> mbti;
+ getline(file, description);
+ getline(file, description);
+ if (hashtag != '#')
+ {
+ cerr << "Fichier mal remplie ou endommagé" << endl;
+ break;
+ }
+ name = prenom + " " + nom;
+ if(oldName == name)
+ break;
+ oldName = name;
+ Employe nom(name, crea, market, com, scient, cost, mbti, description);
+ cout << i << " - "; i++;
+ nom.afficherInfo();
+ cout << endl;
+ }
+ 
+ file.close();
+ }
+ else
+ cerr << "Impossible d'ouvrir le fichier !" << endl;
+ }*/

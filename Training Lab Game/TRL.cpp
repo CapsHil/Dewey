@@ -21,62 +21,8 @@ void TRL::afficherTRL(){
 }
 
 
-void TRL::addEmploye(){
-    
-    int choix, zut(1); char again('y'), i(1);
-    vector<int> occupe;
-    while(again == 'y'){
-        cout << "Yoh" << endl;
-        do{
-            cin >> choix;
-            for(int j=0; j<occupe.size(); j++){
-                if(occupe[j] == choix){
-                    cout << "Cet employé est déjà occupé !" << endl;
-                    zut = 0;
-                    break;
-                }
-                else
-                    zut = 1;
-            }
-        }while(zut == 0);
-        occupe.push_back(choix);
-        
-        ifstream file("/Users/Pierre/Desktop/Training Lab Game/Training Lab Game/employeForme.txt", ios::in);
-        
-        if(file)
-        {
-            char hashtag;
-            string prenom, nom, test, name, oldName, description;
-            int crea, market, com, scient, cost, mbti;
-            while(getline(file, test)){
-                
-                file >> hashtag; file >> prenom; file >> nom; file >> crea; file >> market; file >> com; file >> scient; file >> cost; file >> mbti;
-                getline(file, description);
-                getline(file, description);
-                if (hashtag != '#')
-                {
-                    cerr << "Fichier mal remplie ou endommagé" << endl;
-                    break;
-                }
-                name = prenom + " " + nom;
-                if(i == choix){
-                    Employe nom(name, crea, market, com, scient, cost, mbti, description);
-                    m_equipe.push_back(nom);
-                    cout << nom.getNom() << " a bien été ajouté au projet en cours !" << endl;
-                }
-                if(oldName == name)
-                    break;
-                oldName = name;
-                i++;
-            }
-            file.close();
-        }
-        else
-            cerr << "Impossible d'ouvrir le fichier !" << endl;
-        
-        cout << "Ajouter encore un employe ? (y/n)" << endl;
-        cin >> again;
-    }
+void TRL::addEmploye(Employe employe){
+    m_equipe.push_back(employe);
 }
 
 int TRL::getMotivPerso(Employe::Employe employe){
